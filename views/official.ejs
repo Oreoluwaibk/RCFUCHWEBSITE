@@ -1,0 +1,87 @@
+<%- include('extras/header') %>
+
+
+    <div class="container">
+        <div class="service__days">
+            <div class="sunday">
+                <h2>SUNDAY SERVICE</h2>
+                <P>Sunday, 8am to 11:15am</P>
+                <p>Alexander Brown Hall Cafeteria(ABH), University College Hospital(UCH)</p>
+            </div>
+            <div class="sunday">
+                <h2>BIBLE STUDY</h2>
+                <P>Tuesday, 6-8pm</P>
+                <p>Famewo Common Room(FCR), Alexander Brown Hall Cafeteria(ABH), University College Hospital(UCH)</p>
+            </div>
+            <div class="sunday">
+                <h2>PRAYER MEETING</h2>
+                <P>Friday, 6-8pm</P>
+                <p>Ayodele Falase Hall Tarmac, University College Hospital(UCH)</p>
+            </div>
+            
+        </div>
+        <div class="cards">
+            <div class="full__card">
+                <div class="card__header">
+                    <h2>Message Update!</h2>
+                    <small id="date"></small>
+                </div>
+                <div class="card__body">
+                    <h2 class="card_body_text">FOLLOWING GOD'S PLAN FOR YOUR LIFE:</h2>
+                    <p class="card_body_text">Hello Brethren, Most of us have a hard time relinquishing control to God. and it's because deep down, we don't really trust that His plans for us are for our greatest good? We need to repent, and bring all to His loving guidance. Join us in this series</p>
+                </div>
+                <div class="card__footer">
+                    <p>To download the message</p>
+                    <a href="#" class="message__link">Click here</a>
+                </div>   
+            </div>
+            
+        </div>
+        <div class="weekly__quotes">
+            <div class="quotes">
+                <h1>QUOTE OF THE WEEK:</h1>
+                <p> I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service. And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.</p>
+                <h1>ROMANS 12:1-2 KJV</h1>
+            </div>
+        </div>
+        <div class="excos">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <%  exco.forEach((excutive)=> { %>
+    
+                <div class="meet__excos fade not__active">
+                 
+                     <div class="excos__header">
+                         <h2><%= excutive.post%>></h2>
+                     </div>
+                     <div class="excos__body">
+                         <img src="<%= excutive.image%>" alt="The GEN SEC RCF_UCH" class="card__photo">
+                     </div>
+                     <div class="excos__footer">
+                         <p><%= excutive.name%>></p>
+                         <a href="#"></a>
+                     </div>
+                 
+                 </div> 
+             
+             <%  }) %>
+            
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        
+        </div>
+        <div class="dot__head">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+        </div>
+    </div>
+    <div class="salvation__call">
+        <p>The Love that Jesus have for you is unreplaccable. He loved to the point that He died for you. He never condemned you and will not condemn you. All you need is to accept His Sacrifice by accepting Him as your Lord and Saviour, and you shall be SAVED!</p>
+    </div>
+    
+
+    <%- include('extras/footer') %>

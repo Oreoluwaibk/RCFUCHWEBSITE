@@ -1,0 +1,115 @@
+<%- include('extras/header')  %>
+<div class="admin_service">
+<div class="admin_service_days">
+    <div class="sunday">
+        <h2>SUNDAY SERVICE</h2>
+        <P>Sunday, 8am to 11:15am</P>
+        <p>Alexander Brown Hall Cafeteria(ABH), University College Hospital(UCH)</p>
+    </div>
+    <div class="sunday">
+        <h2>BIBLE STUDY</h2>
+        <P>Tuesday, 6-8pm</P>
+        <p>Famewo Common Room(FCR), Alexander Brown Hall Cafeteria(ABH), University College Hospital(UCH)</p>
+    </div>
+    <div class="sunday">
+        <h2>PRAYER MEETING</h2>
+        <P>Friday, 6-8pm</P>
+        <p>Ayodele Falase Hall Tarmac, University College Hospital(UCH)</p>
+    </div>
+    
+</div>
+<div><p class="admin_set_button service_change">set service date</p></div>
+</div>
+
+<div class="admin_message_update">
+    <div class="admin_card">
+        <div class="card__header">
+            <h2>Message Update!</h2>
+            <small id="date"></small>
+        </div>
+        <div class="card__body">
+            <h2 class="card_body_text">FOLLOWING GOD'S PLAN FOR YOUR LIFE:</h2>
+            <p class="card_body_text">Hello Brethren, Most of us have a hard time relinquishing control to God. and it's because deep down, we don't really trust that His plans for us are for our greatest good? We need to repent, and bring all to His loving guidance. Join us in this series</p>
+        </div>
+        <div class="card__footer">
+            <p>To download the message</p>
+            <a href="#" class="message__link">Click here</a>
+        </div>   
+    </div> 
+    <div><p class="admin_set_button message_change">click here to update message!</p></div>   
+</div>
+
+
+<div class="admin_weekly_quotes">
+    <div class="admin_quotes">
+        <h1>QUOTE OF THE WEEK:</h1>
+        <p> I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service. And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.</p>
+        <h1>ROMANS 12:1-2 KJV</h1>
+    </div>
+    <div><p class="admin_set_button quotes_change">click here to update verse</p></div>
+    <div class="admin_excos_change not__active">
+        <h2>ADD EXECUTIVES</h2>
+        <form action="/about" method="post">
+            <label for="postion" class="name">Position</label><br>
+            <input type="text" name= "position" class="admint"><br>
+            <label for="image" class="password">Upload Image</label><br>
+            <input type="file" name="image" class="admint"><br>
+            <label for="name" class="confirm_password">Name</label><br>
+            <input type="text" name="name" class="admint"><br>
+            <button type="submit" value="button" class="admin_button">Submit</button><br>
+        </form>
+    </div>
+</div>
+
+
+<div class="admin_excos">
+    <div class="excos">
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+
+        <%  exco.forEach((excutive)=> { %>
+        
+        <div class="meet__excos fade not__active">
+            
+                <div class="excos__header">
+                    <h2><%= excutive.post%></h2>
+                    <p class="cancel_btn">x</p>
+                </div>
+                <div class="excos__body">
+                    <img src="<%= excutive.image%>" alt="The GEN SEC RCF_UCH" class="card__photo">
+                </div>
+                <div class="excos__footer">
+                    <p><%= excutive.name%>></p>
+                    <a href="#"></a>
+                </div>
+            
+            </div> 
+        
+        <%  }) %>
+            
+        
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <div><p class="admin_set_button excos_change">Update Excos</p></div>
+
+    <div class="admin_excos_change not__active">
+        <h2>ADD EXECUTIVES</h2>
+        <form action="/about" method="post">
+            <label for="postion" class="name">Position</label><br>
+            <input type="text" name= "position" class="admint"><br>
+            <label for="image" class="password">Upload Image</label><br>
+            <input type="file" name="image" class="admint"><br>
+            <label for="name" class="confirm_password">Name</label><br>
+            <input type="text" name="name" class="admint"><br>
+            <button type="submit" value="button" class="admin_button">Submit</button><br>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
+
+<%- include('extras/footer') %>

@@ -1,0 +1,20 @@
+<%- include('extras/header')  %>
+
+
+    <div class="admin__login login_admin">
+        <h2>LOGIN AS ADMIN</h2>
+        <form action="/adminlogin" method="post">
+            <label for="name" class="name">Admin Name:</label><br>
+            <input type="text" name="admin_name" class="admint"><br>
+            <label for="password" class="password">Password:</label><br>
+            <input type="password" name="password" class="admint"><br>
+            <button type="submit" value="button" class="admin_button">submit</button><br>
+            <p class="admin_button"><a href="/adminreset" class="nav__each">Reset Admin</a></p>
+        </form>
+    </div>
+
+    <div class="salvation__call">
+        <p>The Love that Jesus have for you is unreplaccable. He loved to the point that He died for you. He never condemned you and will not condemn you. All you need is to accept His Sacrifice by accepting Him as your Lord and Saviour, and you shall be SAVED!</p>
+    </div>
+
+    <%- include('extras/footer') %>

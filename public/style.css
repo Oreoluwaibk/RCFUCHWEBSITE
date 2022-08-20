@@ -1,0 +1,776 @@
+body{
+    color: #2C3333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+button{
+    text-decoration: none;
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    background-color: #c4d7e0;
+    border-radius: 1rem;
+    transition: all ease 1000ms;
+    margin-right: 1.5rem;
+}
+button:hover{
+    cursor: pointer;
+    background-color: #9e9c9c;
+}
+footer{
+    color: #2C3333;
+    background-color: #B2C8DF;
+}
+footer .poi{
+    opacity: 0.2;
+}
+h1, h2, a{
+    font-family: lobster, cursive;
+    color: #2C3333;
+}
+#date{
+    font-family: lobster, cursive;
+    color: #2C3333;
+}
+input{
+    width: 30%;
+    height: 1.5rem;
+    border-radius: 1rem;
+    border-color: #9e9c9c;
+    padding: 0 0.5rem;
+    font-family: lobster, cursive;
+    color: #2C3333;
+    border-width: none;
+}
+p{
+    font-size: 1.3rem;
+    font-family: Edu SA Beginner, cursive;
+    color: #2C3333;
+}
+small{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    bottom: 1.5rem;
+}
+/*==============class style=======================*/
+.admin__login button{
+    padding: 0.5rem 5rem;
+    margin-top: 1rem;
+    width: 32%;
+    font-family: lobster, cursive;
+    color: #2C3333;
+    position: relative;
+    left: 1%;
+    
+}
+.admin__login button:hover{
+    background-color: #706f6f;
+    cursor: pointer;
+
+}
+.admin__login .name{
+    position: relative;
+    right: 9%;
+    justify-content: left;
+}
+.admin__login .password{
+    position: relative;
+    right: 10%;
+    justify-content: left;
+}
+.admin__login{
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 5rem 2rem;
+    color: #2C3333;
+    width: 70%;
+    font-family: lobster, cursive;
+    margin: 10% 0 0 13%;
+    z-index: 1;
+}
+.admin__login input{
+    border: 1px;
+    color: #000;
+    width: 30%;
+    height: 2rem;
+    border-style: solid;
+    border-radius: 1rem;
+    border-color: #9e9c9c;
+    padding: 0 0.5rem;
+    margin: 0.5rem 0;
+}
+
+.cards{
+    display: flex;
+    padding: 0;
+    margin-bottom: 4%;
+}
+.card__body{
+    padding: 5%;
+    border-bottom: solid #c4d7e0 .7px;
+    height: 40vh;
+    background-image: url("/image/background1.jpg");
+    background-size: cover;
+    background-position: center;
+    transition: all ease 1000ms;
+}
+
+.card__body p{
+    width: 50%;
+    margin-left: 25%;
+} 
+.card__footer{
+    padding: 0 1rem;
+    height: 75px;
+    border-radius: 0 0 2rem 2rem;
+}
+.card__header{
+    text-align: center;
+    border-bottom: solid #c4d7e0 .7px;
+    padding: 5px 0;
+    margin: 0;
+    border-radius: 2rem 2rem 0 0;
+}
+.card__photo{
+    height: 350px;
+    width: 100%;
+    
+}
+.confirm_password{
+    margin-right: 10%;
+}
+.contac{
+    text-decoration: none;
+    color: #000;
+    padding: 1rem 2rem;
+    background-color: #c4d7e0;
+    border-radius: 1rem;
+    transition: all ease 1000ms;
+    margin-right: 1.5rem;
+}
+.contac:hover{
+    background-color: #9e9c9c;
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    margin-top: 2rem;
+    
+}
+.dot__head{
+    text-align: center;
+}
+ 
+.active, .dot:hover {
+    background-color: #717171;
+}
+.excos{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.excos__body{
+    height: 350px;
+}
+.excos__header{
+    display: flex;
+    justify-content: space-between;
+}
+.cancel_btn{
+    font-weight: bolder;
+    cursor: pointer;
+    font: 1rem;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+  }
+.follow{
+    margin: 0;
+    padding: 0;
+    font-family: lobster, cursive;
+}
+.follow__us{
+    text-align: center;
+    margin: 2rem 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+}
+.span{
+    padding: 0.3rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 1rem;
+}
+.full__card{
+    width: 100%;
+    height: 100%;
+    color: #000;
+    margin: 0;
+    margin-bottom: 14%;
+    transition: all ease 1000ms;
+}
+.full__card:hover{
+    border-radius: 2rem;
+}
+.headed{
+    background-image: url("/image/head2.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.healing{
+    width: 30%;
+    position: relative;
+    top: .6rem;
+    font-size: 15px;
+}
+.icons{
+    color: #706f6f;
+    font-weight: bolder;
+}
+.logo{
+    height: 100px;
+    width: 100px;
+    border-right: 1px solid #c9e0eb;
+}
+.logo__set{
+    display: flex;
+    position: fixed;
+    background-color: #B2C8DF;
+    height: 15%;
+    z-index: 1;
+}
+.login {
+    display: none;
+    flex-direction: column;
+}
+.meet__excos{
+    width: 25%;
+    height: 30%;
+    margin: 0 1rem;
+    color: #000;
+    transition: all ease 500ms;
+}
+.meet__excos:hover{
+    height: 100%;
+    width: 26%;
+    box-shadow: 2px 2px 3rem rgb(0, 0, 0, 0.4);
+    border-radius: 2rem;
+    
+}
+.menu__icons{
+    color: #2C3333;
+    font-weight: bolder;
+    transition: all ease 1000ms;
+    display: none;
+}
+.menu__icons:hover{
+    cursor: pointer;
+    color: #a79d9d;
+}
+.message__link{
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background-color: #c4d7e0;
+    border-radius: 1rem;
+    transition: all ease 1000ms;
+    font-size: 15px;
+    font-weight: bold;
+    color: #2C3333;
+}
+.message__link:hover{
+    background-color: rgb(0, 0, 0, 0.4);
+    transition: all ease 1000ms;
+}
+.not__active{
+    transition: all ease 1000ms;
+    display: none;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #B2C8DF;
+    width: 85.5%;
+    height: 15%;
+    color: #000;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+}
+.nav p{
+    font-family: lobster, cursive;
+}
+.nav li{
+    font-family: lobster, cursive;
+}
+.nav__each{
+    text-decoration: none;
+}
+.nav__each:hover{
+    color: #9c9c9c;
+}
+.nav__logo{
+    display: flex;
+}
+.nav__logo p{
+    font-family: lobster, cursive;
+}
+.nav__redirect{
+    position: relative;
+    left: 30%;
+    display: flex;
+    list-style-type: none;
+    gap: 2rem;
+    margin-right: 15rem;
+}
+.nav__redirect:hover{
+    cursor: pointer;
+    
+}
+.next {
+    cursor: pointer;
+    position: absolute;
+    right: 2rem;
+    width: auto; 
+    margin-top: -22px;
+    padding: 16px;
+    color: rgb(0, 0, 0, 0.4);
+    font-weight: bold;
+    font-size: 4rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.prev{
+    cursor: pointer;
+    position: absolute;
+    left: 2rem;
+    width: auto; 
+    margin-top: -22px;
+    padding: 16px;
+    color: rgb(0, 0, 0, 0.4);
+    font-weight: bold;
+    font-size: 4rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.prev:hover, .next:hover{
+    color: rgb(0, 0, 0, 0.7);
+}
+.active{
+    display: block;
+}
+.salvation__call{
+    color: #000;
+    padding: 7% 30%;
+    
+}
+.salvation__call p{
+    font-family: lobster, cursive;
+    font-size: 2rem;
+}
+
+.search{
+    text-align: center;
+    position: fixed;
+    top: 4rem;
+    width: 100%;
+    z-index: 1;
+    color: #000;
+    display: none;
+    padding: 0.5rem 0;
+}
+.search__active{
+    display: block;
+} 
+.search__icon{
+    color: #9e9c9c;  
+}
+.search__icon:hover{
+    cursor: pointer;
+    color: #706f6f; 
+}
+.service__days{
+    margin-top: 2%;
+    padding: 10% 0;
+    color: #000;
+}
+.weekly__quotes{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 14rem;
+    padding: 0;
+    background-image: url("/image/file/back6.jpg");
+    background-position: center;
+    background-size: cover;
+    
+}
+.weekly__quotes p{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.weekly__quotes:hover{
+    border-radius: 2rem;
+    transition: all ease 1000ms;
+}
+.welcome__left{
+    text-align: left;
+    width: 50%;
+    position: relative;
+    top: 8rem;
+    left: 6rem;
+}
+.welcome__left h1{
+    font-size: 3.5rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+.welcome__left h4{
+    font-size: 1.5rem;
+    opacity: .7;
+    margin-top: 0;
+    padding-top: 0;
+}
+.welcome__rigth{
+    width: 50%;
+    text-align: center;
+}
+.welcome__page{
+    height: 500px;
+    /* background-position: center; */
+    display: flex;
+    padding: 0% 5%;
+    gap: 3rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.quotes{
+    padding: 7% 15%;
+}
+/*====================MASTER ADMIN STYLINH BEGINS=========================================*/
+.admin_service{
+    margin-bottom: 5%;
+}
+.admin_service_days{
+    margin-top: 2%;
+    padding-top: 3%;
+    color: #000;
+}
+.admin_set_button{
+    text-decoration: none;
+    color: #000;
+    padding: 1rem 2rem;
+    background-color: #c4d7e0;
+    border-radius: 1rem;
+    transition: all ease 1000ms;
+    width: 30%;
+    margin-left: 32%;
+    font-size: 1.5rem;
+}
+.admin_set_button:hover{
+    background-color: #9e9c9c;
+    cursor: pointer;
+}
+.admin_card{
+    width: 90%;
+    height: 100%;
+    margin-left: 5%;
+    color: #000;
+    margin-bottom: 3%;
+    transition: all ease 1000ms;
+    display: flex;
+    flex-direction: column;
+}
+.card__body:hover{
+    border-radius: 2rem;
+}
+.admin_excos_change{
+    margin: 1% 0 2%;
+}
+.admin_message_update{
+    padding: 0;
+    margin-bottom: 10%;
+}
+.admin_weekly_quotes{
+    margin-bottom: 10%;
+}
+
+.admin_quotes{
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    height: 100%;
+    padding: 5% 0;
+    background-image: url("/image/file/back6.jpg");
+    background-position: center;
+    background-size: cover;
+    transition: all ease 1000ms;
+}
+.admin_quotes p{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.admin_quotes:hover{
+    border-radius: 2rem;
+   
+}
+
+
+
+
+
+
+
+
+/*====================MASTER ADMIN STYLINH ENDS=========================================*/
+
+@media screen and (max-width: 700px) {
+    .admin__login{
+        font-size: 1rem;
+        text-align: center;
+        background-color: #fff;
+    }
+    .admin__login button{
+        width: 75%;
+        position: relative;
+        left: 3%;
+    }
+    .admin__login .name{
+        position: relative;
+        right: 24%;
+    }
+    .admin__login .password{
+        position: relative;
+        right: 27%;
+    }
+    .admin__login input{
+        border: 1px;
+        color: #000;
+        width: 70%;
+        height: 2rem;
+        border-style: solid;
+        border-radius: 1rem;
+        border-color: #9e9c9c;
+        padding: 0 0.5rem;
+        margin: 0.5rem 0;
+    }
+    .search{
+        text-align: center;
+        position: fixed;
+        width: 50%;
+        left: 55%;
+        z-index: 2;
+        color: #000;
+        display: none;
+    }
+    .search__active{
+        display: block;
+    }
+    .salvation__call{
+        color: #000;
+        padding: 7% 12%;
+        
+    }
+    .next{
+        position: absolute;
+        right: 0;
+    }
+    .prev{
+        position: absolute;
+        left: 0rem;
+    }
+    .meet__excos{
+        width: 40%;
+    }
+    .meet__excos:hover{
+        height: 50%;
+        width: 41%;
+        box-shadow: 2px 2px 3rem rgb(0, 0, 0, 0.4);
+        border-radius: 2rem;
+        
+    }
+    .weekly__quotes p{
+        width: 80%;
+        margin-left: 13%;
+    }
+    .full__card{
+        width: 100%;
+        height: 100vh;
+        color: #000;
+        margin: 0;
+        margin-bottom: 14%;
+        transition: all ease 1000ms;
+    }
+    .full__card:hover{
+        border-radius: 2rem;
+    }
+    .card__body p{
+        width: 70%;
+        margin-left: 15%;
+        
+    } 
+    .card__footer{
+        padding: 0 1rem;
+        height: 75px;
+        border-radius: 0 0 2rem 2rem;
+    }
+    .card__header{
+        text-align: center;
+        border-bottom: solid #c4d7e0 .7px;
+        padding: 5px 0;
+        margin: 0;
+        border-radius: 2rem 2rem 0 0;
+    }
+    .card__photo{
+        height: 350px;
+        width: 100%;
+        
+    }
+    .confirm_password{
+        margin-right: 45%;
+    }
+    .welcome__left{
+        text-align: left;
+        width: 70%;
+        position: relative;
+        top: 8rem;
+        left: 2rem;
+    }
+    .welcome__left h1{
+        font-size: 2rem;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    .welcome__left h4{
+        font-size: 1rem;
+        opacity: 0.8;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .service__days{
+        margin-top: 2%;
+        padding: 10% 15%;
+        color: #000;
+    }
+    
+    .nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        width: 45%;
+        height: 85.5%;
+        color: #000;
+        position: fixed;
+        right: 0;
+        top: 14.5%;
+        z-index: 1;
+        display: none;
+        transition: all ease 1000ms;
+    }
+    .nav__logo{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #fff;
+        position: fixed;
+        width: 100%;
+        z-index: 1; 
+    }
+    .nav__logo p{
+        font-family: lobster, cursive;
+        width: 25%;
+    }
+    .logo{
+        margin: 0;
+        padding: 0;
+    }
+    .logo__set{
+        display: flex;
+        position: relative;
+        right: 4rem;
+        background-color: #fff;
+
+    }
+    .healing{
+        margin: 0;
+        padding: 0;
+    }
+    .activate{
+        display: block;
+        transition: all ease 1000ms;
+    }
+    .not__activate{
+        display: none;
+        transition: all ease 1000ms;
+    }
+    .nav__redirect{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+
+    }
+    .menu__icons{
+        z-index: 3;
+        position: relative;
+        right: 1rem;
+    } 
+    .menu__icons:hover{
+        cursor: pointer;
+    }
+    .contac{
+        text-decoration: none;
+        color: #000;
+        padding: 1rem 2rem;
+        background-color: #c4d7e0;
+        border-radius: 1rem;
+        
+    }
+    
+    
+    .contct{
+        margin-top: 65%;
+    } 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
