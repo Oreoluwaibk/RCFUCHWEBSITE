@@ -13,7 +13,8 @@ const randomString = parseFloat(randomNumber);
 const url = 'url("/image/head' + randomString + '.jpg")';
 const adminReset = document.querySelector(".admin_reset");
 const adminLogin = document.querySelector(".admin_login");
-const excoChange = document.querySelector(".excos_change");
+
+
 
 
 
@@ -32,9 +33,7 @@ const official = `© Copyright ${currentYear} The Redeemed Christian Fellowship`
 document.querySelector(".poi").innerHTML = official;
 
 
-// excoChange.addEventListener("click", () => {
-//     document.querySelector(".admin_excos_change").classList.toggle("not__active")
-// })
+
 
 searchIcon.addEventListener("click", ()=>{
   search.classList.toggle("search__active");

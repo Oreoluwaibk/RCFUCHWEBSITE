@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Exco = require("../Models/excos");
 
+
 router.use(function(req, res, next){
     console.log(req.url, "welcome to the adminpage router");
     next();
