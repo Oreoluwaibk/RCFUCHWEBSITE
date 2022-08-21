@@ -3,38 +3,40 @@
 
     <div class="container">
         <div class="service__days">
-            <div class="sunday">
-                <h2>SUNDAY SERVICE</h2>
-                <P>Sunday, 8am to 11:15am</P>
-                <p>Alexander Brown Hall Cafeteria(ABH), University College Hospital(UCH)</p>
-            </div>
-            <div class="sunday">
-                <h2>BIBLE STUDY</h2>
-                <P>Tuesday, 6-8pm</P>
-                <p>Famewo Common Room(FCR), Alexander Brown Hall Cafeteria(ABH), University College Hospital(UCH)</p>
-            </div>
-            <div class="sunday">
-                <h2>PRAYER MEETING</h2>
-                <P>Friday, 6-8pm</P>
-                <p>Ayodele Falase Hall Tarmac, University College Hospital(UCH)</p>
-            </div>
-            
+<%            service.forEach((program) => { %>
+                <div class="sunday">
+                    <h2><%= program.meetingname %></h2>
+                    <P><%= program.meetingdate %></P>
+                    <p><%= program.meetingvenue %></p>
+                </div>
+<%            }) %>
+        
         </div>
-        <div class="cards">
-            <div class="full__card">
-                <div class="card__header">
+<%    if(sermon !== []){        %>
+        <%    sermon.forEach((message) =>{ %>
+            <div class="cards">
+                <div class="full__card">
                     <h2>Message Update!</h2>
                     <small id="date"></small>
                 </div>
                 <div class="card__body">
-                    <h2 class="card_body_text">FOLLOWING GOD'S PLAN FOR YOUR LIFE:</h2>
-                    <p class="card_body_text">Hello Brethren, Most of us have a hard time relinquishing control to God. and it's because deep down, we don't really trust that His plans for us are for our greatest good? We need to repent, and bring all to His loving guidance. Join us in this series</p>
+                    <h2 class="card_body_text"><%= message.messageTitle%></h2>
+                    <p class="card_body_text"><%= message.messageDetails %></p>
                 </div>
                 <div class="card__footer">
                     <p>To download the message</p>
                     <a href="#" class="message__link">Click here</a>
                 </div>   
-            </div>
+            </div> 
+    <%    }) %>
+<% }else{ %>
+        <div class="admin_card">
+            <div class="card__header">
+                <h2> NO Message Update!</h2>
+                <small id="date"></small>
+            </div>  
+        </div>
+    <% }   %>
             
         </div>
         <div class="weekly__quotes">

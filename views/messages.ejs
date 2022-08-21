@@ -1,21 +1,28 @@
 <%- include('extras/header') %>
-
-<div class="cards">
-    <div class="full__card">
+<%    if(sermon === []){        %>
+    <div class="admin_card">
         <div class="card__header">
-            <h2>Message Update!</h2>
+            <h2> NO Message Update!</h2>
             <small id="date"></small>
-        </div>
-        <div class="card__body">
-            <h2 class="card_body_text">FOLLOWING GOD'S PLAN FOR YOUR LIFE:</h2>
-            <p class="card_body_text">Hello Brethren, Most of us have a hard time relinquishing control to God. and it's because deep down, we don't really trust that His plans for us are for our greatest good? We need to repent, and bring all to His loving guidance. Join us in this series</p>
-        </div>
-        <div class="card__footer">
-            <p>To download the message</p>
-            <a href="#" class="message__link">Click here to download</a>
-        </div>   
+        </div>  
     </div>
-    
-</div>
+<% }else{ %>
+    <%    sermon.forEach((message) =>{ %>
+        <div class="cards">
+            <div class="full__card">
+                <h2>Message Update!</h2>
+                <small id="date"></small>
+            </div>
+            <div class="card__body">
+                <h2 class="card_body_text"><%= message.messageTitle%></h2>
+                <p class="card_body_text"><%= message.messageDetails %></p>
+            </div>
+            <div class="card__footer">
+                <p>To download the message</p>
+                <a href="#" class="message__link">Click here</a>
+            </div>   
+        </div> 
+    <%    }) %>
+<% }   %>
 
 <%- include('extras/footer') %>

@@ -6,7 +6,7 @@ const search = document.querySelector(".search");
 const bars = document.querySelector(".bars");
 const cancel = document.querySelector(".cancel");
 const nav = document.querySelector(".nav");
-const dayte = document.getElementById("date");
+const date = document.getElementById("date");
 const headE = document.querySelector(".headed");
 const randomNumber = Math.floor((Math.random() * 10) + 1);
 const randomString = parseFloat(randomNumber);
@@ -28,6 +28,8 @@ const options = {
 }
 const currentYear = today.getFullYear();
 const currentDay = today.toLocaleDateString("en-uk", options);
+
+date.innerHTML = currentDay;
 
 const official = `© Copyright ${currentYear} The Redeemed Christian Fellowship`
 document.querySelector(".poi").innerHTML = official;
@@ -81,15 +83,15 @@ function currentSlide(n) {
 async function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("meet__excos");
-  let dots = document.getElementsByClassName("dot");
+  // let dots = document.getElementsByClassName("dot");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
+  // for (i = 0; i < dots.length; i++) {
+  //   dots[i].className = dots[i].className.replace(" active", "");
+  // }
   const x = window.matchMedia("(max-width: 700px)");
   if (x.matches){
     slides[slideIndex - 1].style.display = "grid";
@@ -103,7 +105,7 @@ async function showSlides(n) {
     slides[slideIndex].style.display = "grid";
     slides[slideIndex + 1].style.display = "grid";
 
-    dots[slideIndex-1].className += " active";
-    dots[slideIndex].className += " active";
+    // dots[slideIndex-1].className += " active";
+    // dots[slideIndex].className += " active";
   }
 }

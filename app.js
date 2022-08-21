@@ -29,17 +29,22 @@ app.use("/messages", messageSermon);
 //accessing the scehmas in the models folder
 const Exco = require("./Models/excos");
 const Admin = require("./Models/adminSchema");
-// const Sermon = require("./Models/sermonSchema");
+const Sermon = require("./Models/sermonSchema");
 const Service = require("./Models/serviceSchema");
 
 
 app.get("/", (req, res) => {
-    Exco.find((err, excos) => {
-        res.render("official", {
-            exco: excos
-        })
-    })
-    Service.findOne({})
+    Service.find((err, service) => {
+        Sermon.find((err, sermon) =>{
+            Exco.find((err, excos) => {
+                res.render("official", {
+                    exco: excos,
+                    service: service,
+                    sermon: sermon
+                })
+            })  
+        })   
+    }) 
 });
 
 

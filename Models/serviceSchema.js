@@ -1,11 +1,11 @@
 const mongoose = require("mongoose");
 
 const serviceSchema = new mongoose.Schema({
-    messageTitle: String,
-    messageURL: String,
-    messageNote: String
+    meetingname: String,
+    meetingdate: String,
+    meetingvenue: String
 });
 
-const Service = new mongoose.model("Sermon", serviceSchema);
+const Service = new mongoose.model("Service", serviceSchema);
 
 module.exports = Service;

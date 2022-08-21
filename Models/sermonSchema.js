@@ -2,8 +2,9 @@ const mongoose = require("mongoose");
 
 const sermonSchema = new mongoose.Schema({
     messageTitle: String,
-    messageURL: String,
-    messageNote: String
+    messageDetails: String,
+    messagePreacher: String,
+    messageAudio: String
 });
 
 const Sermon = new mongoose.model("Sermon", sermonSchema);
