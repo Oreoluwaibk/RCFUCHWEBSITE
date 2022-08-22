@@ -1,12 +1,8 @@
 <%- include('extras/header') %>
-<%    if(sermon === []){        %>
-    <div class="admin_card">
-        <div class="card__header">
-            <h2> NO Message Update!</h2>
-            <small id="date"></small>
-        </div>  
-    </div>
-<% }else{ %>
+
+
+
+<%    if(sermon !== []){        %>
     <%    sermon.forEach((message) =>{ %>
         <div class="cards">
             <div class="full__card">
@@ -22,7 +18,18 @@
                 <a href="#" class="message__link">Click here</a>
             </div>   
         </div> 
-    <%    }) %>
+<%    }) %>
+<% }else{ %>
+    <div class="admin_card">
+        <div class="card__header">
+            <h2> NO Message Update!</h2>
+            <small id="date"></small>
+        </div>  
+    </div>
 <% }   %>
+        
+   
+
+
 
 <%- include('extras/footer') %>

@@ -4,6 +4,9 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const bcrypt = require("bcrypt");
 const app = express();
+
+
+//import the routers
 const adminlogin = require("./routes/adminlogin");
 const adminReset = require("./routes/adminreset");
 const adminPage = require("./routes/adminpage");
@@ -18,7 +21,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.set("view engine", "ejs");
 
-//import the routers
+//use imported the routers
 app.use("/adminlogin", adminlogin);
 app.use("/adminreset", adminReset);
 app.use("/adminpage", adminPage);
@@ -26,25 +29,35 @@ app.use("/about", about);
 app.use("/messages", messageSermon);
 
 
+
+
 //accessing the scehmas in the models folder
 const Exco = require("./Models/excos");
 const Admin = require("./Models/adminSchema");
 const Sermon = require("./Models/sermonSchema");
 const Service = require("./Models/serviceSchema");
+const Quote = require("./Models/quotesSchema");
 
 
 app.get("/", (req, res) => {
+
     Service.find((err, service) => {
         Sermon.find((err, sermon) =>{
-            Exco.find((err, excos) => {
-                res.render("official", {
-                    exco: excos,
-                    service: service,
-                    sermon: sermon
-                })
-            })  
+            Quote.find((err, bibleText) => {
+                const quotes = bibleText[bibleText.length - 1]
+                const text = bibleText[bibleText.length - 1].bibletext
+                Exco.find((err, excos) => {
+                    res.render("official", {
+                        exco: excos,
+                        service: service,
+                        sermon: sermon,
+                        quotes: quotes,
+                        text: text
+                    })
+                }) 
+            })
         })   
-    }) 
+    })
 });
 
 
@@ -65,63 +78,5 @@ app.listen(PORT, async ()=>{
 
 
 
-
-
-// app.post("/admin", (req, res) =>{
-    
-//     const adminName = req.body.admin_name;
-//     const adminPassword = req.body.password;
-//     const adminConfirm = req.body.confirm_password
-//     if(adminConfirm === adminPassword || adminConfirm === undefined){
-//         Exco.find((err, excos) => {
-
-//             res.render("adminpage", {
-//                 exco: excos
-//             })
-//         })
-//     }
-
-// });
-
-// app.post("/adminpage", (req, res)=>{
-//     res.send("well posted")
-// })
-
-
-
-// app.get("/about", (req, res) =>{
-//     Exco.find((err, excos) => {
-
-//         res.render("about", {
-//             exco: excos
-//         })
-//     })
-// });
-
-// app.post("/about", (req, res) =>{
-//     console.log(req.body);
-
-//     // const user1 = new Exco({
-//     //         post: req.body.position,
-//     //         image: req.body.image,
-//     //         name: req.body.name 
-//     //     });
-
-//     // user1.save();
-//     // res.redirect("/about");
-
-// });
-
-// app.get("/messages", (req, res) => {
-//     res.render("messages")
-// })
-
-// // app.get("/:content", (req, res) =>{
-// //     const selected = req.params.content;
-// //     res.render(selected);
-// // });
-// app.get("/testimonies", (req, res) => {
-//     res.render("testimonies")
-// })
 
 

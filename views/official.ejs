@@ -40,11 +40,12 @@
             
         </div>
         <div class="weekly__quotes">
-            <div class="quotes">
-                <h1>QUOTE OF THE WEEK:</h1>
-                <p> I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service. And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.</p>
-                <h1>ROMANS 12:1-2 KJV</h1>
-            </div>
+        <p>
+<%        text.forEach((texts) =>{ %>
+                <%= texts.text %>
+<%        })  %>
+        </p>
+        <h1><%= quotes.reference %></h1>
         </div>
         <div class="excos">
             <a class="prev" onclick="plusSlides(-1)">&#10094;</a>

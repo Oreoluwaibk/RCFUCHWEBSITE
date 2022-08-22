@@ -184,7 +184,7 @@ small{
 }
 .excos__header{
     display: flex;
-    justify-content: space-between;
+    z-index: 1;
 }
 .cancel_btn{
     font-weight: bolder;

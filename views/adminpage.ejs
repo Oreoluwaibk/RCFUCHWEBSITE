@@ -84,21 +84,26 @@
 
 
 <div class="admin_weekly_quotes">
+
     <div class="admin_quotes">
         <h1>QUOTE OF THE WEEK:</h1>
-        <p> I beseech you therefore, brethren, by the mercies of God, that ye present your bodies a living sacrifice, holy, acceptable unto God, which is your reasonable service. And be not conformed to this world: but be ye transformed by the renewing of your mind, that ye may prove what is that good, and acceptable, and perfect, will of God.</p>
-        <h1>ROMANS 12:1-2 KJV</h1>
+        <p>
+<%        text.forEach((texts) =>{ %>
+            <%= texts.text %>
+<%        })  %>
+        </p>
+        <h1><%= quotes.reference %></h1>
     </div>
     <div class="add_quotes not__active">
         <h2>ADD WEEKLY QUOTES</h2>
         <form action="/adminpage" method="post">
             <label for="quotes" class="name">Select Book</label><br>
-            <input type="text" name= "position" class="admint"><br>
+            <input type="text" name= "biblebook" class="admint"><br>
             <label for="image" class="password">Select Chapter</label><br>
-            <input type="number" name="image" class="admint"><br>
+            <input type="number" name="biblechapter" class="admint"><br>
             <label for="verse" class="confirm_password">Select Verse</label><br>
-            <input type="number" name="name" class="admint"><br>
-            <button type="submit" value="add_quotes" class="admin_button">Submit</button><br>
+            <input type="text" name="bibleverse" class="admint"><br>
+            <button type="submit" name="addquotes" value="add_quotes" class="admin_button">Submit</button><br>
         </form>
     </div>
     <div><p class="admin_set_button quotes_change">click here to update verse</p></div>
@@ -108,41 +113,39 @@
 <div class="admin_excos">
     <div class="excos">
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <%  exco.forEach((executive) => { %>
 
-        <%  exco.forEach((excutive)=> { %>
-        
         <div class="meet__excos fade not__active">
             
                 <div class="excos__header">
-                    <h2><%= excutive.post %> </h2>
-                    <p class="cancel_btn">x</p>
+                    <h2><%= executive.name %></h2>
                 </div>
                 <div class="excos__body">
-                    <img src="<%= excutive.image%>" alt="The GEN SEC RCF_UCH" class="card__photo">
+                    <img src="<%= executive.image%>" alt="The GEN SEC RCF_UCH" class="card__photo">
                 </div>
                 <div class="excos__footer">
-                    <p><%= excutive.name %></p>
+                    <p><%= executive.post %></p>
                     <a href="#"></a>
                 </div>
+                <form action="/adminpage" method="post">
+                    <button name="removeexco" value="<%= executive.post %>" type="submit">click to remove</button>
+                </form>
             
             </div> 
-        
         <%  }) %>
-            
-        
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
     </div>
-    <div class="admin_excos_change not__active">
+
+    <div class="admin_excos_change not__active ">
         <h2>ADD EXECUTIVES</h2>
-        <form action="/about" method="post">
+        <form action="/adminpage" method="post">
             <label for="postion" class="name">Position</label><br>
             <input type="text" name= "position" class="admint"><br>
             <label for="image" class="password">Upload Image</label><br>
-            <input type="file" name="image" class="admint"><br>
+            <input type="text" name="image" class="admint"><br>
             <label for="name" class="confirm_password">Name</label><br>
             <input type="text" name="name" class="admint"><br>
-            <button type="submit" value="add_excos" class="admin_button">Submit</button><br>
+            <button type="submit" name="addexecutive" value="add_excos" class="admin_button">Submit</button><br>
         </form>
     </div>
     <div><p class="admin_set_button excos_change">Update Excos</p></div>
