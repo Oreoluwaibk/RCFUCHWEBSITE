@@ -2,7 +2,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-const bcrypt = require("bcrypt");
+
+
+
 const app = express();
 
 
@@ -37,6 +39,8 @@ const Admin = require("./Models/adminSchema");
 const Sermon = require("./Models/sermonSchema");
 const Service = require("./Models/serviceSchema");
 const Quote = require("./Models/quotesSchema");
+
+//app to convert and safe image to database
 
 
 app.get("/", (req, res) => {

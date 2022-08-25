@@ -35,47 +35,37 @@
 
 
 <div class="admin_message_update">
-<%    if(sermon !== []){        %>
+
     <%    sermon.forEach((message) =>{ %>
         <div class="admin_card">
             <div class="card__header">
                 <h2>Message Update!</h2>
                 <small id="date"></small>
             </div>
-            <div class="card__body">
+            <div class="card__body" style='background-image: url("/sermonimages/<%= message.messageImage.filename %>");'>
                 <h2 class="card_body_text"><%= message.messageTitle%></h2>
                 <p class="card_body_text"><%= message.messageDetails %></p>
             </div>
-            <div class="card__footer">
-                <p>To download the message</p>
-                <a href="#" class="message__link">Click here</a>
-            </div>   
+              
             <form action="/adminpage" method="post">
                 <button name="removemessage" value="<%= message.messageTitle%>" type="submit">click to remove</button>
             </form>
         </div> 
 <%    }) %>
-<% }else{ %>
-    <div class="admin_card">
-        <div class="card__header">
-            <h2> NO Message Update, click the button below to add!</h2>
-            <small id="date"></small>
-        </div>  
-    </div>
-<% }   %>
+
 
 
     <div class="add_sermon not__active">
         <h2>UPDATE MESSAGE</h2>
-        <form action="/adminpage" method="post">
+        <form action="/adminpage" method="post" enctype="multipart/form-data">
             <label for="quotes" class="name">Sermon Title</label><br>
             <input type="text" name= "sermontitle" class="admint"><br>
             <label for="note" class="password">About Sermon</label><br>
             <textarea name="aboutsermon" class="admint" cols="50" rows="10"></textarea><br>
             <label for="note" class="password">Message by:</label><br>
             <input type="text" name="messageby" class="admint"><br>
-            <label for="note" class="password">Upload Sermon</label><br>
-            <input type="file" name="uploadsermon" class="admint"><br>
+            <label for="note" class="password">Upload Sermon Image</label><br>
+            <input type="file" name="image"  class="admint"><br>
             <button type="submit" name="addmessage" value="add_message" class="admin_button">Submit</button><br>
         </form>
     </div>
@@ -103,6 +93,8 @@
             <input type="number" name="biblechapter" class="admint"><br>
             <label for="verse" class="confirm_password">Select Verse</label><br>
             <input type="text" name="bibleverse" class="admint"><br>
+            <label for="verse" class="confirm_password">Select Background Image</label><br>
+            <input type="file" name="image"  class="admint"><br>
             <button type="submit" name="addquotes" value="add_quotes" class="admin_button">Submit</button><br>
         </form>
     </div>
@@ -121,7 +113,7 @@
                     <h2><%= executive.name %></h2>
                 </div>
                 <div class="excos__body">
-                    <img src="<%= executive.image%>" alt="The GEN SEC RCF_UCH" class="card__photo">
+                    <img src="/sermonimages/<%= executive.image.filename %>" alt="<%= executive.image.originalname %>" class="card__photo">
                 </div>
                 <div class="excos__footer">
                     <p><%= executive.post %></p>
@@ -138,11 +130,11 @@
 
     <div class="admin_excos_change not__active ">
         <h2>ADD EXECUTIVES</h2>
-        <form action="/adminpage" method="post">
+        <form action="/adminpage" method="post" enctype="multipart/form-data">
             <label for="postion" class="name">Position</label><br>
             <input type="text" name= "position" class="admint"><br>
             <label for="image" class="password">Upload Image</label><br>
-            <input type="text" name="image" class="admint"><br>
+            <input type="file" name="image" class="admint"><br>
             <label for="name" class="confirm_password">Name</label><br>
             <input type="text" name="name" class="admint"><br>
             <button type="submit" name="addexecutive" value="add_excos" class="admin_button">Submit</button><br>

@@ -1,12 +1,15 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
+
 const Exco = require("../Models/excos");
 const Service = require("../Models/serviceSchema");
 const Sermon = require("../Models/sermonSchema");
 const Quote = require("../Models/quotesSchema");
 const axios = require("axios");
 const { response } = require("express");
+const excosUpload = require("../multerimagessaves/excosimages");
+const sermonImagesUpload = require("../multerimagessaves/messageimage");
 
 router.use(function(req, res, next){
     console.log(req.url, "welcome to the adminpage router");
@@ -38,7 +41,7 @@ router
         })
         
     })
-    .post((req, res) => {
+    .post(sermonImagesUpload, (req, res) => {
         const addProgram = req.body.add_program_button;
         const removeProgram = req.body.remove_service;
         const addMessage = req.body.addmessage;
@@ -46,7 +49,7 @@ router
         const addQuotes = req.body.addquotes;
         const addExco = req.body.addexecutive;
         const removeExco = req.body.removeexco;
-        console.log(req.body);
+       
         if(addProgram || removeProgram){
             if(addProgram){
                 const program =req.body.church_program;
@@ -80,14 +83,23 @@ router
             const aboutSermon = req.body.aboutsermon;
             const sermonBy = req.body.messageby;
             const addSermon = req.body.addmessage;
-            
+            console.log(req.file);
 
             if(addMessage){
+                console.log(req.file);
+                console.log(req.body);
+
+                console.log("ihghj");
                 const newSermon = new Sermon ({
                     messageTitle: sermonTitle,
                     messageDetails: aboutSermon,
                     messagePreacher: sermonBy,
-                    messageAudio: addSermon
+                    messageImage: {
+                        data: req.file.filename,
+                        contentType: "image.jpeg",
+                        filename: req.file.filename,
+                        originalname: req.file.originalname
+                    }
                 });
                 newSermon.save((err) =>{
                     if(err){
@@ -97,6 +109,10 @@ router
                         res.redirect("/adminpage");
                     }
                 })
+            
+                    
+                
+                
             }else{
                 Sermon.deleteOne({meetingname: removeMessage}, (err)=>{
                     if(err){
@@ -133,15 +149,23 @@ router
 
            
         }else if (addExco || removeExco){
+            
             const posT = req.body.position
             const imagE = req.body.image
             const namE = req.body.name
-
+            console.log(req.file);
+            console.log(req.body);
+            
             if(addExco){
                 console.log("it got here");
                 const newExco1 = new Exco({
                     post: posT,
-                    image: imagE,
+                    image: {
+                        data: req.file.filename,
+                        contentType: "image/jpeg",
+                        filename: req.file.filename,
+                        originalname: req.file.originalname
+                    },
                     name: namE
                 });
 
@@ -153,6 +177,8 @@ router
                         res.redirect("/adminpage")
                     }
                 })
+                
+                
             }else{
                 Exco.deleteOne({post: removeExco}, (err)=>{
                     if (err) {

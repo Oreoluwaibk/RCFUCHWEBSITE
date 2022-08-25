@@ -2,7 +2,13 @@ const mongoose = require("mongoose");
 
 const quotesSchema = new mongoose.Schema({
     bibletext: Array,
-    reference: String
+    reference: String,
+    bibleImage: {
+        data: Buffer,
+        contentType: String,
+        filename: String,
+        originalname: String
+    }
 }, {timestamps: true});
 
 

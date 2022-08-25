@@ -13,6 +13,7 @@ const randomString = parseFloat(randomNumber);
 const url = 'url("/image/head' + randomString + '.jpg")';
 const adminReset = document.querySelector(".admin_reset");
 const adminLogin = document.querySelector(".admin_login");
+const weeklyQuotes = document.querySelector(".weekly__quotes")
 
 
 
@@ -42,6 +43,7 @@ searchIcon.addEventListener("click", ()=>{
 });
 
 headE.style.backgroundImage = url;
+
 bars.addEventListener("click", ()=>{
 
     nav.classList.add("activate");
