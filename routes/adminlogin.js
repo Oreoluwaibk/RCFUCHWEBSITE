@@ -4,6 +4,10 @@ const bcrypt = require("bcrypt");
 const adminLoginValidation = require("../Validations/adminLoginValidation");
 const Admin = require("../Models/adminSchema");
 const Service = require("../Models/serviceSchema");
+const passport = require("passport");
+const localStrategy = require("passport-local").Strategy;
+const passportLocalMongoose = require("passport-local-mongoose")
+const session = require("express-session");
 
 
 router.use(express.json());
@@ -11,6 +15,7 @@ router.use(function(req, res, next){
     console.log(req.url, "welcome to the adminlogin router");
     next();
 })
+
 
 router
     .route("/")
@@ -33,6 +38,7 @@ router
                     status: "USERNAME FIELD IS EMPTY",
                 })
             }else{
+                console.log("got here 3")
                 Admin.findOne({username: adminName}, async (err, user)=>{
                     console.log(user)
                     if(err){

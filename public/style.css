@@ -103,10 +103,53 @@ small{
 }
 
 .cards{
+    width: 90%;
+    height: 100%;
+    margin-left: 5%;
+    color: #000;
+    margin-bottom: 0;
+    transition: all ease 1000ms;
     display: flex;
     flex-direction: column;
-    padding: 0;
-    margin-bottom: 4%;
+    margin-bottom: 17%;
+}
+.upload_cards{
+    width: 90%;
+    height: 70%;
+    margin-left: 5%;
+    color: #000;
+    position: relative;
+    transition: all ease 1000ms;
+    margin-bottom: 35%;
+}
+.uploads{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    z-index: -1;
+   opacity: 0;
+   margin-top: 3%;
+   background-color: rgba(0, 0, 0, 0.8);
+    transition: opacity 1s ease-in-out;
+}
+
+.upload_image{
+    width: 60%;
+    height: 100%;
+}
+.upload_chance{
+   margin-top: -4%; 
+}
+.uploadclick{
+    margin-top: 8%;
+    opacity: 1;
+    z-index: 2;
+}
+.official_upload{
+    margin-top: 43%;
 }
 .card__body{
     padding: 5%;
@@ -116,6 +159,7 @@ small{
     background-size: cover;
     background-position: center;
     transition: all ease 1000ms;
+    
 }
 
 .card__body p{
@@ -225,7 +269,6 @@ small{
     height: 100%;
     color: #000;
     margin: 0;
-    margin-bottom: 14%;
     transition: all ease 1000ms;
 }
 .full__card:hover{
@@ -341,7 +384,7 @@ small{
 }
 .nav__redirect{
     position: relative;
-    left: 30%;
+    left: 40%;
     display: flex;
     list-style-type: none;
     gap: 2rem;
@@ -416,19 +459,14 @@ small{
     color: #706f6f; 
 }
 .service__days{
-    margin-top: 2%;
+    margin-top: 0;
     padding: 10% 0;
     color: #000;
 }
 .weekly__quotes{
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    margin-bottom: 14rem;
-    padding: 0;
-    background-image: url("/image/file/back6.jpg");
-    background-position: center;
-    background-size: cover;
+   
+    margin-bottom: 10%;
+   margin-top: -5%;
     
 }
 .weekly__quotes p{

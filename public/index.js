@@ -6,7 +6,7 @@ const search = document.querySelector(".search");
 const bars = document.querySelector(".bars");
 const cancel = document.querySelector(".cancel");
 const nav = document.querySelector(".nav");
-const date = document.getElementById("date");
+
 const headE = document.querySelector(".headed");
 const randomNumber = Math.floor((Math.random() * 10) + 1);
 const randomString = parseFloat(randomNumber);
@@ -22,16 +22,7 @@ const weeklyQuotes = document.querySelector(".weekly__quotes")
 
 
 const today = new Date();
-const options = {
-  weekday: "long",
-  day: "numeric",
-  month: "long"
-}
 const currentYear = today.getFullYear();
-const currentDay = today.toLocaleDateString("en-uk", options);
-
-date.innerHTML = currentDay;
-
 const official = `© Copyright ${currentYear} The Redeemed Christian Fellowship`
 document.querySelector(".poi").innerHTML = official;
 

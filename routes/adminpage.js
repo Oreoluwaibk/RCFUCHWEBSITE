@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
 
+
 const Exco = require("../Models/excos");
 const Service = require("../Models/serviceSchema");
 const Sermon = require("../Models/sermonSchema");
@@ -10,11 +11,12 @@ const axios = require("axios");
 const { response } = require("express");
 const excosUpload = require("../multerimagessaves/excosimages");
 const sermonImagesUpload = require("../multerimagessaves/messageimage");
-
+const Upload = require("../Models/uploaded");
 router.use(function(req, res, next){
     console.log(req.url, "welcome to the adminpage router");
     next();
 })
+
 
 
 router
@@ -28,13 +30,17 @@ router
                     const quotes = bibleText[bibleText.length - 1]
                     const text = bibleText[bibleText.length - 1].bibletext
                     Exco.find((err, excos) => {
-                        res.render("adminpage", {
-                            exco: excos,
-                            service: service,
-                            sermon: sermon,
-                            quotes: quotes,
-                            text: text
+                        Upload.find((err, upload) =>{
+                            res.render("adminpage", {
+                                exco: excos,
+                                service: service,
+                                sermon: sermon,
+                                quotes: quotes,
+                                text: text,
+                                upload: upload
+                            })
                         })
+                       
                     }) 
                 })
             })   
@@ -49,6 +55,8 @@ router
         const addQuotes = req.body.addquotes;
         const addExco = req.body.addexecutive;
         const removeExco = req.body.removeexco;
+        const addUpload = req.body.addupload;
+        const removeUpload = req.body.removeupload;
        
         if(addProgram || removeProgram){
             if(addProgram){
@@ -148,6 +156,30 @@ router
                 
 
            
+        }else if (addUpload || removeUpload){
+            if(addUpload){
+                const image = new Upload({
+                    uploadImage: {
+                        data: req.file.filename,
+                        contentType: "image/jpeg",
+                        filename: req.file.filename,
+                        originalname: req.file.originalname
+                    }  
+                })
+                image.save();
+                res.redirect("/adminpage");
+
+            }else{
+                Upload.deleteOne({originalname: removeUpload}, (err)=>{
+                    if(err){
+                        console.log(err);
+                    }else{
+                        console.log("dleetd successfully");
+                        res.redirect("/adminpage");
+                    }
+                })
+            }
+
         }else if (addExco || removeExco){
             
             const posT = req.body.position

@@ -3,7 +3,7 @@
 
 <div class="admin_service">
 <div class="admin_service_days">
-    <%            service.forEach((program) => { %>
+    <% service.forEach((program) => { %>
         <div class="sunday">
             
             <h2><%= program.meetingname %></h2>
@@ -14,7 +14,7 @@
             </form>
             
         </div>
-<%            }) %>
+    <% }) %>
     
     <div class="add_service not__active">
         <h2>ADD PROGRAM</h2>
@@ -36,7 +36,7 @@
 
 <div class="admin_message_update">
 
-    <%    sermon.forEach((message) =>{ %>
+    <% sermon.forEach((message) =>{ %>
         <div class="admin_card">
             <div class="card__header">
                 <h2>Message Update!</h2>
@@ -51,9 +51,7 @@
                 <button name="removemessage" value="<%= message.messageTitle%>" type="submit">click to remove</button>
             </form>
         </div> 
-<%    }) %>
-
-
+    <%}) %>
 
     <div class="add_sermon not__active">
         <h2>UPDATE MESSAGE</h2>
@@ -78,12 +76,13 @@
     <div class="admin_quotes">
         <h1>QUOTE OF THE WEEK:</h1>
         <p>
-<%        text.forEach((texts) =>{ %>
-            <%= texts.text %>
-<%        })  %>
+        <% text.forEach((texts) =>{ %>
+                <%= texts.text %>
+        <% }) %>
         </p>
         <h1><%= quotes.reference %></h1>
     </div>
+
     <div class="add_quotes not__active">
         <h2>ADD WEEKLY QUOTES</h2>
         <form action="/adminpage" method="post">
@@ -93,12 +92,47 @@
             <input type="number" name="biblechapter" class="admint"><br>
             <label for="verse" class="confirm_password">Select Verse</label><br>
             <input type="text" name="bibleverse" class="admint"><br>
-            <label for="verse" class="confirm_password">Select Background Image</label><br>
-            <input type="file" name="image"  class="admint"><br>
             <button type="submit" name="addquotes" value="add_quotes" class="admin_button">Submit</button><br>
         </form>
     </div>
     <div><p class="admin_set_button quotes_change">click here to update verse</p></div>
+</div>
+
+<div class="upload">
+    <div class="upload_block">
+        <h1>HOW DID SERVICE GO, IT'S ALWAYS A BLISS TO BE IN THE PRESENCE OF OUR FATHER</h1>
+        <a class="prev" onclick="prevImage()">&#10094;</a>
+        
+        <div class="upload_cards">
+<%            upload.forEach((upload) =>{ %>
+   
+                <div class="uploads">
+                    
+                    <img src="/sermonimages/<%= upload.uploadImage.filename %>" alt="<%= upload.uploadImage.originalname%>" class="upload_image">
+                   
+                </div>
+                <div class="upload_chance">
+                <form action="/adminpage" method="post" enctype="multipart/form-data" >
+                    <button name="removeupload"  type="submit" value="<%= upload.uploadImage.originalname%>" >click to remove</button>
+                </form>
+            </div>
+                
+          <%  }) %>
+            
+        </div>
+        
+        <div class="add_upload not__active">
+            <h2>ADD SERVICE IMAGE</h2>
+            <form action="/adminpage" method="post" enctype="multipart/form-data">
+                <label for="quotes" class="name">Select Image</label><br>
+                <input type="file" name="image"  class="admint"><br>
+                <button type="submit" name="addupload" value="add_quotes" class="admin_button">Submit</button><br>
+            </form>
+        </div>
+        <div><p class="admin_set_button upload_change">click here to add Image</p></div>
+    </div>
+
+    
 </div>
 
 
@@ -107,8 +141,8 @@
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <%  exco.forEach((executive) => { %>
 
-        <div class="meet__excos fade not__active">
-            
+            <div class="meet__excos fade not__active">
+                
                 <div class="excos__header">
                     <h2><%= executive.name %></h2>
                 </div>
